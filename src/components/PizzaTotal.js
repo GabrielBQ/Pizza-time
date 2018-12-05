@@ -16,6 +16,11 @@ import React from "react";
 
 class PizzaTotal extends React.Component {
   render() {
+    return (
+      <div className="score">
+        <span className="label">Total</span>
+      </div>
+    )
 
   }
 }
