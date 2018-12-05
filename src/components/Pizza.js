@@ -4,6 +4,15 @@
     - A `PizzaIngredients` component
     - A `PizzaTotal` component
   - You need 👇 code to set the initial state
+    
+*/
+import React from "react";
+import PizzaHeader from "./PizzaHeader";
+import PizzaIngredients from "./PizzaIngredients";
+import PizzaTotal from "./PizzaTotal";
+
+class Pizza extends React.Component {
+  state = {
     ingredients: {
       dough: {
         id: 1,
@@ -42,19 +51,16 @@
         selected: false
       }
     }
-*/
-import React from "react";
-import PizzaHeader from "./PizzaHeader";
-import PizzaTotal from "./PizzaTotal";
+  };
 
-class Pizza extends React.Component {
   render() {
     return (
-      <div>
+      <div className="content">
         <PizzaHeader />
+        <PizzaIngredients ingredients={this.state.ingredients} />
         <PizzaTotal />
       </div>
-    )
+    );
   }
 }
 
