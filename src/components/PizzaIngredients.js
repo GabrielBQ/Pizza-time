@@ -9,7 +9,9 @@ class PizzaIngredients extends React.Component {
   render() {
     return (
       <ul>
-        <PizzaIngredient ingredients={this.props.ingredients} />
+        {Object.keys(this.props.ingredients).map(ingredientKey => (
+          <PizzaIngredient ingredients={this.props.ingredients} />
+        ))}
       </ul>
     );
   }

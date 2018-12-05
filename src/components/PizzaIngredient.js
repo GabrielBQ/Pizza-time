@@ -13,7 +13,12 @@ import React from "react";
 
 class PizzaIngredient extends React.Component {
   render() {
-    return <li className={this.props.ingredients.selected ? "marked" : ""} />;
+    return (
+      <li className={this.props.ingredients.selected ? "marked" : ""}>
+        <span className="phrase" />
+        <span className="points" />
+      </li>
+    );
   }
 }
 
