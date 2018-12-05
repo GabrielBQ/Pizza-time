@@ -12,3 +12,12 @@
         2. map `cash` property
         3. reduce all that money with `reduce(<reducer function>, 0)`
 */
+import React from "react";
+
+class PizzaTotal extends React.Component {
+  render() {
+
+  }
+}
+
+export default PizzaTotal;
