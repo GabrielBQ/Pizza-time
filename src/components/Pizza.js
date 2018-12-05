@@ -43,3 +43,12 @@
       }
     }
 */
+import React from "react";
+
+class Pizza extends React.Component {
+  render() {
+
+  }
+}
+
+export default Pizza;
