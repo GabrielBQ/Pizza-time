@@ -7,6 +7,15 @@ import React from "react";
 
 class PizzaHeader extends React.Component {
   render() {
+    return (
+      <header className="pizza-text">
+        <h1>
+          <span role="img" aria-labelledby="pizza">
+            🍕
+      </span>
+          It's Pizza Time!</h1>
+      </header >
+    )
 
   }
 }

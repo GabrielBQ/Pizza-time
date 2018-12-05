@@ -44,10 +44,13 @@
     }
 */
 import React from "react";
+import PizzaHeader from "./PizzaHeader";
 
 class Pizza extends React.Component {
   render() {
-
+    return (
+      <PizzaHeader />
+    )
   }
 }
 
