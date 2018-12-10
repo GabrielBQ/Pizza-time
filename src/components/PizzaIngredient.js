@@ -10,13 +10,16 @@
       (HINT: 👆 Check out `src/helpers.js` to import the `formatPrice` function)
 */
 import React from "react";
+import { formatPrice } from "../helpers";
 
 class PizzaIngredient extends React.Component {
   render() {
+    const { id, name, cash } = this.props.ingredientDetails;
+
     return (
       <li className={this.props.ingredients.selected ? "marked" : ""}>
-        <span className="phrase" />
-        <span className="points" />
+        <span className="phrase">{name}</span>
+        <span className="points">{formatPrice(cash)}</span>
       </li>
     );
   }
