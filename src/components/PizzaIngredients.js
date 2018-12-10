@@ -2,7 +2,6 @@
   - An `ul` where you `map` over `ingredients` to create a `PizzaIngredient` per `ingredientKey`
 */
 import React from "react";
-import { formatPrice } from "../helpers";
 import PizzaIngredient from "./PizzaIngredient";
 
 class PizzaIngredients extends React.Component {
@@ -11,8 +10,10 @@ class PizzaIngredients extends React.Component {
       <ul>
         {Object.keys(this.props.ingredients).map(ingredientKey => (
           <PizzaIngredient
+            key={ingredientKey}
             ingredients={this.props.ingredients}
             ingredientKey={ingredientKey}
+            selectIngredient={this.props.selectIngredient}
             addToTotal={this.props.addToTotal}
           />
         ))}

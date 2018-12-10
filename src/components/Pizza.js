@@ -55,6 +55,17 @@ class Pizza extends React.Component {
     total: {}
   };
 
+  selectIngredient = ingredientKey => {
+    const ingredients = { ...this.state.ingredients };
+
+    if (ingredients[ingredientKey].selected) {
+      ingredients[ingredientKey].selected = false;
+    } else {
+      ingredients[ingredientKey].selected = true;
+    }
+    this.setState({ ingredients: ingredients });
+  };
+
   addToTotal = totalKey => {
     const newTotal = { ...this.state.total };
     newTotal[totalKey] = newTotal[totalKey] ? newTotal[totalKey] + 1 : 1;
@@ -67,6 +78,7 @@ class Pizza extends React.Component {
         <PizzaHeader />
         <PizzaIngredients
           ingredients={this.state.ingredients}
+          selectIngredient={this.selectIngredient}
           addToTotal={this.addToTotal}
         />
         <PizzaTotal />
