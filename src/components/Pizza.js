@@ -50,14 +50,25 @@ class Pizza extends React.Component {
         cash: 100,
         selected: false
       }
-    }
+    },
+
+    total: {}
+  };
+
+  addToTotal = totalKey => {
+    const newTotal = { ...this.state.total };
+    newTotal[totalKey] = newTotal[totalKey] ? newTotal[totalKey] + 1 : 1;
+    this.setState({ total: newTotal });
   };
 
   render() {
     return (
       <div className="content">
         <PizzaHeader />
-        <PizzaIngredients ingredients={this.state.ingredients} />
+        <PizzaIngredients
+          ingredients={this.state.ingredients}
+          addToTotal={this.addToTotal}
+        />
         <PizzaTotal />
       </div>
     );

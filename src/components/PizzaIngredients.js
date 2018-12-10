@@ -12,8 +12,8 @@ class PizzaIngredients extends React.Component {
         {Object.keys(this.props.ingredients).map(ingredientKey => (
           <PizzaIngredient
             ingredients={this.props.ingredients}
-            ingredientDetails={this.props.ingredients[ingredientKey]}
             ingredientKey={ingredientKey}
+            addToTotal={this.props.addToTotal}
           />
         ))}
       </ul>

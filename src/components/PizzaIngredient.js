@@ -13,11 +13,24 @@ import React from "react";
 import { formatPrice } from "../helpers";
 
 class PizzaIngredient extends React.Component {
+  handleClick = () => {
+    this.props.addToTotal(this.props.ingredientsKey);
+  };
+
   render() {
-    const { id, name, cash } = this.props.ingredientDetails;
+    const { id, name, cash, selected } = this.props.ingredients[
+      this.props.ingredientKey
+    ];
 
     return (
-      <li className={this.props.ingredients.selected ? "marked" : ""}>
+      <li
+        className={
+          this.props.ingredients[this.props.ingredientKey].selected
+            ? "marked"
+            : ""
+        }
+        onClick={this.handleClick}
+      >
         <span className="phrase">{name}</span>
         <span className="points">{formatPrice(cash)}</span>
       </li>
