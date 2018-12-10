@@ -13,15 +13,22 @@
         3. reduce all that money with `reduce(<reducer function>, 0)`
 */
 import React from "react";
+import { formatPrice } from "../helpers";
 
 class PizzaTotal extends React.Component {
+  totalAmount = () =>
+    Object.keys(this.props.ingredients)
+      .filter(ingredientKey => this.props.ingredients[ingredientKey].selected)
+      .map(ingredientKey => this.props.ingredients[ingredientKey].cash)
+      .reduce((acc, amount) => acc + amount, 0);
+
   render() {
     return (
       <div className="score">
         <span className="label">Total</span>
+        <span className="value">{formatPrice(this.totalAmount())}</span>
       </div>
-    )
-
+    );
   }
 }
 

@@ -11,10 +11,9 @@ class PizzaIngredients extends React.Component {
         {Object.keys(this.props.ingredients).map(ingredientKey => (
           <PizzaIngredient
             key={ingredientKey}
-            ingredients={this.props.ingredients}
             ingredientKey={ingredientKey}
+            ingredients={this.props.ingredients}
             selectIngredient={this.props.selectIngredient}
-            addToTotal={this.props.addToTotal}
           />
         ))}
       </ul>
@@ -23,5 +22,3 @@ class PizzaIngredients extends React.Component {
 }
 
 export default PizzaIngredients;
-
-//{Object.keys(this.props.ingredients).map(ingredientKey => formatPrice(this.props.ingredients[ingredientKey].cash))}esto es para mostrar los precios
