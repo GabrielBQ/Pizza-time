@@ -65,6 +65,23 @@ class Pizza extends React.Component {
     this.setState({ ingredients: ingredients });
   };
 
+  addOneToId = x => Object.keys(this.state.ingredients).length + 1;
+
+  addIngredient = newIng => {
+    // 1. Take a copy of the existing `state`
+    const ingredients = { ...this.state.ingredients };
+    const ing = {
+      id: this.addOneToId(),
+      name: newIng.name,
+      cash: parseFloat(newIng.cash),
+      selected: false
+    };
+    // 2. Add our newFish to newFishes
+    ingredients[newIng.name.toLowerCase()] = ing;
+    // 3. Set newFishes as the new `state`
+    this.setState({ ingredients: ingredients });
+  };
+
   render() {
     return (
       <div className="content">
