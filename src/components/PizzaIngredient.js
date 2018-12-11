@@ -18,7 +18,9 @@ class PizzaIngredient extends React.Component {
   };
 
   render() {
-    const { name, cash } = this.props.ingredients[this.props.ingredientKey];
+    const { id, name, cash, selected } = this.props.ingredients[
+      this.props.ingredientKey
+    ];
 
     return (
       <li
