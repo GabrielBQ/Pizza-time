@@ -91,7 +91,11 @@ class Pizza extends React.Component {
           selectIngredient={this.selectIngredient}
         />
         <PizzaTotal ingredients={this.state.ingredients} />
-        <AddIngredient />
+
+        <AddIngredient
+          ingredients={this.state.ingredients}
+          addIngredient={this.addIngredient}
+        />
       </div>
     );
   }
